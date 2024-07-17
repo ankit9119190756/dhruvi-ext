@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="KiwiCommerce\Testimonials\Api\TestimonialsRepositoryInterface" type="KiwiCommerce\Testimonials\Model\TestimonialsRepository"/>
+	<preference for="KiwiCommerce\Testimonials\Api\Data\TestimonialsInterface" type="KiwiCommerce\Testimonials\Model\Testimonials"/>
+	<preference for="KiwiCommerce\Testimonials\Api\Data\TestimonialsSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="KiwiCommerce\Testimonials\Model\ResourceModel\Testimonials\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">kiwicommerce_testimonials_testimonials</argument>
+			<argument name="resourceModel" xsi:type="string">KiwiCommerce\Testimonials\Model\ResourceModel\Testimonials\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="kiwicommerce_testimonials_testimonials_listing_data_source" xsi:type="string">KiwiCommerce\Testimonials\Model\ResourceModel\Testimonials\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

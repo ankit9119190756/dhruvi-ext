@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/kiwicommerce-testimonials/testimonials" method="POST">
+		<service class="KiwiCommerce\Testimonials\Api\TestimonialsRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="KiwiCommerce_Testimonials::Testimonials_save"/>
+		</resources>
+	</route>
+	<route url="/V1/kiwicommerce-testimonials/testimonials/search" method="GET">
+		<service class="KiwiCommerce\Testimonials\Api\TestimonialsRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="KiwiCommerce_Testimonials::Testimonials_view"/>
+		</resources>
+	</route>
+	<route url="/V1/kiwicommerce-testimonials/testimonials/:testimonialsId" method="GET">
+		<service class="KiwiCommerce\Testimonials\Api\TestimonialsRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="KiwiCommerce_Testimonials::Testimonials_view"/>
+		</resources>
+	</route>
+	<route url="/V1/kiwicommerce-testimonials/testimonials/:testimonialsId" method="PUT">
+		<service class="KiwiCommerce\Testimonials\Api\TestimonialsRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="KiwiCommerce_Testimonials::Testimonials_update"/>
+		</resources>
+	</route>
+	<route url="/V1/kiwicommerce-testimonials/testimonials/:testimonialsId" method="DELETE">
+		<service class="KiwiCommerce\Testimonials\Api\TestimonialsRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="KiwiCommerce_Testimonials::Testimonials_delete"/>
+		</resources>
+	</route>
+</routes>

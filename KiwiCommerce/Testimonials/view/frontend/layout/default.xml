@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="content">
+			<block class="KiwiCommerce\Testimonials\Block\Testimonials" name="testimonials" as="testimonials" template="KiwiCommerce_Testimonials::testimonials.phtml"/>
+		</referenceBlock>
+	</body>
+</page>

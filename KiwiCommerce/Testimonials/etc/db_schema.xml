@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="kiwicommerce_testimonials_testimonials" resource="default" engine="innodb" comment="kiwicommerce_testimonials_testimonials Table">
+		<column xsi:type="int" name="testimonials_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="testimonials_id"/>
+		</constraint>
+		<column name="company_name" nullable="true" xsi:type="text" comment="company_name"/>
+		<column name="name" nullable="true" xsi:type="text" comment="name"/>
+		<column name="message" nullable="true" xsi:type="text" comment="message"/>
+		<column name="post" nullable="true" xsi:type="text" comment="post"/>
+		<column name="profile_pic" nullable="true" xsi:type="text" comment="profile_pic"/>
+		<column name="status" nullable="true" xsi:type="boolean" comment="status"/>
+		<!-- <column name="created_at" nullable="true" xsi:type="date" comment="created_at"/>
+		<column name="updated_at" nullable="true" xsi:type="date" comment="updated_at"/> -->
+		<column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="Creation Time"/>
+    <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Update Time"/>
+
+	</table>
+</schema>
